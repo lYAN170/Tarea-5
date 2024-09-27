@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiApp.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="ImageButton" x:Key="IconButtonStyle">
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="HeightRequest" Value="100" />
+                <Setter Property="BackgroundColor" Value="YellowGreen" />
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="Aspect" Value="AspectFill" />
+            </Style>
+            <Style TargetType="Label" x:Key="ButtonLabelStyle">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="#333" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Padding="10" VerticalOptions="Center">
+            <Label Text="Bienvenido a Carrito App" 
+                   FontSize="24" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start" 
+                   Margin="0,20,0,20"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout>
+                    <ImageButton Source="productos_icon.png" 
+                                 Clicked="OnProductosClicked" 
+                                 Style="{StaticResource IconButtonStyle}" />
+                    <Label Text="Productos" Style="{StaticResource ButtonLabelStyle}" />
+                </StackLayout>
+
+                <StackLayout>
+                    <ImageButton Source="categorias_icon.png" 
+                                 Clicked="OnCategoriasClicked" 
+                                 Style="{StaticResource IconButtonStyle}" />
+                    <Label Text="Categorías" Style="{StaticResource ButtonLabelStyle}" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout>
+                    <ImageButton Source="departamentos_icon.png" 
+                                 Clicked="OnDepartamentosClicked" 
+                                 Style="{StaticResource IconButtonStyle}" />
+                    <Label Text="Departamentos" Style="{StaticResource ButtonLabelStyle}" />
+                </StackLayout>
+
+                <StackLayout>
+                    <ImageButton Source="provincias_icon.png" 
+                                 Clicked="OnProvinciasClicked" 
+                                 Style="{StaticResource IconButtonStyle}" />
+                    <Label Text="Provincias" Style="{StaticResource ButtonLabelStyle}" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Padding="10" HorizontalOptions="Center">
+                <StackLayout>
+                    <ImageButton Source="tiendas_icon.png" 
+                                 Clicked="OnTiendasClicked" 
+                                 Style="{StaticResource IconButtonStyle}" />
+                    <Label Text="Gestión de Tiendas" Style="{StaticResource ButtonLabelStyle}" />
+                </StackLayout>
+
+                <StackLayout>
+                    <ImageButton Source="proveedores_icon.png" 
+                                 Clicked="OnProveedoresClicked" 
+                                 Style="{StaticResource IconButtonStyle}" />
+                    <Label Text="Proveedores" Style="{StaticResource ButtonLabelStyle}" />
+                </StackLayout>
+
+                <StackLayout>
+                    <ImageButton Source="ordenes_icon.png" 
+                                 Clicked="OnOrdenesClicked" 
+                                 Style="{StaticResource IconButtonStyle}" />
+                    <Label Text="Ordenes" Style="{StaticResource ButtonLabelStyle}" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
