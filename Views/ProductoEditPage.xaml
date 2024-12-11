@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarritoApp.View.ProductoEditPage"
+             Title="Editar Producto">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="LabelStyle">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="#333" />
+                <Setter Property="Margin" Value="0,10,0,5" />
+            </Style>
+
+            <Style TargetType="Entry" x:Key="EntryStyle">
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="BackgroundColor" Value="#F2F2F2" />
+                <Setter Property="Margin" Value="0,5" />
+            </Style>
+
+            <Style TargetType="Picker" x:Key="PickerStyle">
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="BackgroundColor" Value="#F2F2F2" />
+                <Setter Property="Margin" Value="0,5" />
+            </Style>
+
+            <Style TargetType="Button" x:Key="ButtonStyle">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="#1964BE" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="Margin" Value="0,10" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            </Style>
+
+            <Style TargetType="Frame" x:Key="InputFrameStyle">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="Padding" Value="5" />
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="HasShadow" Value="True" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="20" BackgroundColor="#FFFFFF" Spacing="20">
+        <Label Text="Editar Producto" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" TextColor="#2FB96E"/>
+
+        <Frame Style="{StaticResource InputFrameStyle}">
+            <StackLayout>
+                <Label Text="Nombre del Producto" Style="{StaticResource LabelStyle}" />
+                <Entry x:Name="NombreEntry" Style="{StaticResource EntryStyle}" Placeholder="Ingrese el nombre del producto" />
+            </StackLayout>
+        </Frame>
+
+        <Frame Style="{StaticResource InputFrameStyle}">
+            <StackLayout>
+                <Label Text="Precio" Style="{StaticResource LabelStyle}" />
+                <Entry x:Name="PrecioEntry" Style="{StaticResource EntryStyle}" Keyboard="Numeric" Placeholder="Ingrese el precio" />
+            </StackLayout>
+        </Frame>
+
+        <Frame Style="{StaticResource InputFrameStyle}">
+            <StackLayout>
+                <Label Text="Categoría" Style="{StaticResource LabelStyle}" />
+                <Picker x:Name="CategoriaPicker" Style="{StaticResource PickerStyle}" Title="Seleccione una categoría" />
+            </StackLayout>
+        </Frame>
+
+        <Button Text="Crear Nueva Categoría" Clicked="OnCreateCategoryClicked" Style="{StaticResource ButtonStyle}"/>
+
+        <Button Text="Guardar" Clicked="OnSaveClicked" Style="{StaticResource ButtonStyle}"/>
+    </StackLayout>
+</ContentPage>

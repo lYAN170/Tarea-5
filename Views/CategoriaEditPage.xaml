@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarritoApp.View.CategoriaEditPage"
+             Title="CategoriaEditPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="TitleLabelStyle">
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="#2FB96E" />
+                <Setter Property="Margin" Value="0,20,0,10" />
+            </Style>
+
+            <Style TargetType="Button" x:Key="ButtonStyle">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="#1964BE" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="Margin" Value="0,10" />
+            </Style>
+
+            <Style TargetType="Frame" x:Key="ProductFrameStyle">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="Padding" Value="5" />
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="10">
+        <Label Text="Nombre de la Categoría" Style="{StaticResource TitleLabelStyle}" />
+        <Entry x:Name="NombreEntry" Placeholder="Nombre" Style="{StaticResource ProductFrameStyle}" />
+
+        <Button Text="Guardar" Clicked="OnSaveClicked" Style="{StaticResource ButtonStyle}" />
+    </StackLayout>
+</ContentPage>
